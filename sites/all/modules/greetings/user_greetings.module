@@ -8,6 +8,13 @@ function user_greetings_menu() {
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
+
+    $items['splashout'] = array(
+        'title' => 'Goodbye User!',
+        'page callback' => 'say_goodbye',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
     return $items;
 }
 
@@ -21,7 +28,22 @@ function say_hello() {
   }
 }
 
+function say_goodbye() {
+  // global $user;
+  // if (in_array('administrator',$user->roles)) {
+  //   return '<p>Bye bye bye!</p>';
+  // }
+  // elseif(in_array('authenticated',$user->roles)) {
+    return '<p>Come back soon!</p>';
+  // }
+}
+
 function user_greetings_user_login()
 {
   $_GET['destination'] = 'splash';
+}
+
+function user_greetings_user_logout()
+{
+  $_GET['destination'] = 'splashout';
 }

@@ -1,0 +1,5 @@
+name = Greetings
+description = Show separate splash pages based on user role.
+package = My Homebrew Modules
+core = 7.x
+files[] = user_greetings.module

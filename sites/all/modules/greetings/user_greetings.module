@@ -1,0 +1,27 @@
+<?php
+
+function user_greetings_menu() {
+    $items = array();
+    $items['splash'] = array(
+        'title' => 'Hello Friend!',
+        'page callback' => 'say_hello',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function say_hello() {
+  global $user;
+  if (in_array('administrator',$user->roles)) {
+    return '<p>Welcome to the Admin view!</p>';
+  }
+  elseif(in_array('authenticated',$user->roles)) {
+    return '<p>Nice to see you!</p>';
+  }
+}
+
+function user_greetings_user_login()
+{
+  $_GET['destination'] = 'splash';
+}

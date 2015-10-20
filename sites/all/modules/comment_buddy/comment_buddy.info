@@ -1,0 +1,5 @@
+name = Comment Buddy
+description = Shows additional views for when comments are created, edited and deleted
+package = My Homebrew Modules
+core = 7.x
+files[] = comment_buddy.module
